@@ -231,8 +231,8 @@ end)
 -- TableEntity is important. It needs to get the entity of the table. (Using Target Eye on Table)
 -- Example below is using the Example in README.md
 -- If you need help we give support on our Discord. https://dsc.gg/mercy-coll
-RegisterNetEvent("mc-drugtables/client/start-cooking", function(CanBeRemoved, TableEntity) -- "CanBeRemoved" could be Removed if TableEntity is first event parameter and not second.
-    local TableId = getTableId(TableEntity['Entity']) -- ['Entity'] Can be removed when not needed
+RegisterNetEvent("mc-drugtables/client/start-cooking", function(CanBeRemoved, TableEntity) -- "CanBeRemoved" COULD be Removed if TableEntity IS first event parameter and not second.
+    local TableId = getTableId(TableEntity)
     if not TableId then return end
     local Table = getTableById(TableId)
     TriggerStage(1, TableId, Table.type)
@@ -241,8 +241,8 @@ end)
 -- TableEntity is important. It needs to get the entity of the table. (Using Target Eye on Table)
 -- Example below is using the Example in README.md
 -- If you need help we give support on our Discord. https://dsc.gg/mercy-coll
-RegisterNetEvent("mc-drugtables/client/pickup-table", function(CanBeRemoved, TableEntity) -- "CanBeRemoved" could be Removed if TableEntity is first event parameter and not second.
-    local TableId = getTableId(TableEntity['Entity']) -- ['Entity'] Can be removed when not needed
+RegisterNetEvent("mc-drugtables/client/pickup-table", function(CanBeRemoved, TableEntity) -- "CanBeRemoved" COULD be Removed if TableEntity IS first event parameter and not second.
+    local TableId = getTableId(TableEntity)
     if not TableId then return end
     local Table = getTableById(TableId)
     Core.Functions.TriggerCallback('mc-drugtables/server/return-table', function(result) end, TableId, Table.type)
